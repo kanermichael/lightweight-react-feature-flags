@@ -13,11 +13,11 @@
 ## Installation
 
 ```bash
-npm install feature-flags
+npm install lightweight-react-feature-flags
 ```
 
 ```bash
-yarn add feature-flags
+yarn add lightweight-react-feature-flags
 ```
 
 ## Code Example
