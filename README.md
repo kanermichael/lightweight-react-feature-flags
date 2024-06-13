@@ -90,6 +90,25 @@ function AllFeaturesComponent() {
 export default AllFeaturesComponent;
 ```
 
+### Render Props
+
+The Feature component also supports the render prop pattern, allowing you to conditionally render children based on whether a feature is enabled:
+
+```typescript
+import React from 'react';
+import { Feature } from 'feature-flags';
+
+function RenderPropComponent() {
+  return (
+    <Feature name="newFeature">
+      {(isEnabled) => <div>{isEnabled ? 'New Feature is active' : 'New Feature is not active'}</div>}
+    </Feature>
+  );
+}
+
+export default RenderPropComponent;
+```
+
 ## API
 
 ### FeatureFlagProvider
