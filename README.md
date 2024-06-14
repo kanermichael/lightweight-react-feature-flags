@@ -78,9 +78,9 @@ function AllFeaturesComponent() {
 
   return (
     <div>
-      {Object.keys(featureFlags).map((feature) => (
+      {Object.entries(featureFlags).map(([feature, isEnabled]) => (
         <div key={feature}>
-          {feature}: {featureFlags[feature] ? 'Enabled' : 'Disabled'}
+          {feature}: {isEnabled ? 'Enabled' : 'Disabled'}
         </div>
       ))}
     </div>

@@ -22,6 +22,6 @@ function transformFeatureFlags<T extends string>(features: FeatureFlags<T>) {
   return Object.fromEntries(features.map((feature) => [feature, true]));
 }
 
-export function useFeatureFlags<T extends string>(): Features<T> {
-  return useContext(FeatureFlagContext) as Features<T>;
+export function useFeatureFlags() {
+  return useContext(FeatureFlagContext);
 }

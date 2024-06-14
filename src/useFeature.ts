@@ -1,11 +1,11 @@
-import { useFeatureFlags, Features } from './FeatureFlagContext';
+import { useFeatureFlags } from './FeatureFlagContext';
 
-export function useFeature<T extends string>(name: T): boolean {
-  const featureFlags = useFeatureFlags<T>();
+export function useFeature(name: string): boolean {
+  const featureFlags = useFeatureFlags();
 
   if (Array.isArray(featureFlags)) {
-    return featureFlags.includes(name as unknown as string);
+    return featureFlags.includes(name);
   }
 
-  return Boolean((featureFlags as Features<T>)[name]);
+  return Boolean(featureFlags[name]);
 }
