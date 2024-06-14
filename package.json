@@ -1,6 +1,6 @@
 {
   "name": "lightweight-react-feature-flags",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "lightweight react feature flags is a React library for managing feature flags. It provides a simple context and hook-based API to enable or disable features in your React application dynamically. This package helps you manage feature releases, perform A/B testing, and control feature visibility effortlessly.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

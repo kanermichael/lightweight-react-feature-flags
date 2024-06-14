@@ -1,16 +1,17 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { useFeature } from './useFeature';
+import React from 'react';
 
-type FeatureProps<T extends string> = {
-  name: T;
+type FeatureProps = {
+  name: string;
   children: ReactNode | ((isEnabled: boolean) => ReactNode);
 };
 
-export function Feature<T extends string>({ name, children }: FeatureProps<T>) {
+export function Feature({ name, children }: FeatureProps) {
   const isEnabled = useFeature(name);
 
   if (typeof children === 'function') {
-    return <>{children(isEnabled)}</>;
+    return <React.Fragment>{children(isEnabled)}</React.Fragment>;
   }
 
   return isEnabled ? <>{children}</> : null;
